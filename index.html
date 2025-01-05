@@ -6,320 +6,284 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tessa Engelbrecht - CV</title>
     <style>
-        /* CSS Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* =============== CSS Reset =============== */
+/* Resets default browser styles for consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* Custom Properties */
-        :root {
-            /* Colors */
-            --color-primary: #2c3e50;
-            --color-secondary: #3498db;
-            --color-accent: #e74c3c;
-            --color-text: #2d3436;
-            --color-text-light: #666;
-            --color-background: #dfe0e0;
-            --color-card: #ffffff;
-            --color-border: #e1e8ed;
+/* =============== Custom Properties =============== */
+/* Defining global variables for colors, typography, spacing, and other reusable values */
+:root {
+    /* Color palette */
+    --color-primary: #2c3e50;
+    --color-secondary: #3498db;
+    --color-accent: #e74c3c;
+    --color-text: #2d3436;
+    --color-text-light: #666;
+    --color-background: #dfe0e0;
+    --color-card: #ffffff;
+    --color-border: #e1e8ed;
 
-            /* Font sizes */
-            --text-xs: 0.75rem;
-            --text-sm: 0.875rem;
-            --text-base: 1rem;
-            --text-lg: 1.125rem;
-            --text-xl: 1.25rem;
-            --text-2xl: 1.5rem;
-            --text-3xl: 2rem;
+    /* Typography */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 2rem;
 
-            /* Spacing */
-            --space-xs: 0.5rem;
-            --space-sm: 1rem;
-            --space-md: 1.5rem;
-            --space-lg: 2rem;
-            --space-xl: 3rem;
+    /* Spacing scale */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
 
-            /* Border radius */
-            --radius-sm: 0.25rem;
-            --radius-md: 1rem;
-            --radius-lg: 1rem;
+    /* Borders and radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 1rem;
+    --radius-lg: 1rem;
 
-            /* Shadows */
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05);
-            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.05);
+    /* Shadows for depth effects */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.05);
 
-            /* Transitions */
-            --transition-fast: 150ms ease-in-out;
-            --transition-normal: 250ms ease-in-out;
+    /* Transition speeds */
+    --transition-fast: 150ms ease-in-out;
+    --transition-normal: 250ms ease-in-out;
 
-            /* Layout */
-            --container-width: 75rem;
-            --header-height: 12rem;
-            --image-size: 10rem;
-        }
+    /* Layout constraints */
+    --container-width: 75rem;
+    --header-height: 12rem;
+    --image-size: 10rem;
+}
 
-        /* Base styles */
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
-            color: var(--color-text);
-            background: var(--color-background);
-            padding: var(--space-md);
-            font-size: var(--text-base);
-        }
+/* =============== Base Styles =============== */
+/* Universal base styles for body */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background: var(--color-background);
+    padding: var(--space-md);
+    font-size: var(--text-base);
+}
 
-        /* Container */
-        .container {
-            max-width: var(--container-width);
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-md);
-        }
+/* =============== Layout and Containers =============== */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
 
-        /* Header section with accent line animation */
-        .header {
-            background: var(--color-card);
-            padding: var(--space-xl);
-            position: relative;
-            height: var(--header-height);
-            display: flex;
-            align-items: center;
-            gap: var(--space-lg);
-            box-shadow: var(--shadow-md);
-            overflow: hidden;
-            border-radius: var(--radius-md);
-        }
+/* =============== Header Section =============== */
+.header {
+    background: var(--color-card);
+    padding: var(--space-xl);
 
-        /* Profile image with hover effect */
-        .profile-image {
-            width: var(--image-size);
-            height: var(--image-size);
-            border-radius: var(--radius-sm);
-            overflow: hidden;
-            position: relative;
-            box-shadow: var(--shadow-md);
-        }
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    box-shadow: var(--shadow-md);
+    border-radius: var(--radius-md);
+}
 
-        .profile-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition-normal);
-        }
+/* =============== Profile Image =============== */
+.profile-image {
+    width: var(--image-size);
+    height: var(--image-size);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+}
 
-        .profile-image:hover img {
-            transform: scale(1.05);
-        }
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-        /* Header content */
-        .header-content {
-            flex: 1;
-        }
+/* =============== Typography =============== */
+.name {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-sm);
+    display: inline-block;
+}
 
-        .name {
-            font-size: var(--text-3xl);
-            color: var(--color-primary);
-            margin-bottom: var(--space-sm);
-            letter-spacing: 0.05em;
-            position: relative;
-            display: inline-block;
-        }
+/* =============== Contact Information =============== */
+.contact-info {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    font-size: var(--text-sm);
+}
 
-        /* Contact info with hover effects */
-        .contact-info {
-            display: flex;
-            gap: var(--space-md);
-            flex-wrap: wrap;
-            font-size: var(--text-sm);
-        }
+.skill-item , .contact-item {
+    background: var(--color-background);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+    transition: var(--transition-fast);
+    border: 0.125rem solid transparent;
+}
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: var(--space-xs);
-            padding: var(--space-xs) var(--space-sm);
-            border-radius: var(--radius-sm);
-            background: var(--color-background);
-            transition: var(--transition-fast);
-        }
+.skill-item:hover, .contact-item:hover {
+    border-color: var(--color-secondary);
+    transform: translateY(-0.125rem);
+    color: var(--color-secondary);
+}
 
-        .contact-item:hover {
-            background: var(--color-secondary);
-            color: var(--color-card);
-            transform: translateY(-0.125rem);
-        }
 
-        /* Section styling with subtle hover effect */
-        .section {
-            background: var(--color-card);
-            padding: var(--space-lg);
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition-normal);
-            position: relative;
-            z-index: 1;
-        }
+/* =============== Section Styling =============== */
+.section {
+    background: var(--color-card);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-normal);
+    position: relative;
+    z-index: 1;
+}
 
-        .section:hover {
-            box-shadow: var(--shadow-md);
-        }
+.section:hover {
+    box-shadow: var(--shadow-md);
+}
 
-        /* Section headers with animated underline */
-        .section-title {
-            color: var(--color-primary);
-            margin-bottom: var(--space-lg);
-            font-size: var(--text-2xl);
-            position: relative;
-            display: inline-block;
-        }
+.section-title {
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+    font-size: var(--text-2xl);
+    position: relative;
+    display: inline-block;
+}
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -0.5rem;
-            width: 0;
-            height: 0.125rem;
-            background-color: var(--color-secondary);
-            transition: var(--transition-normal);
-        }
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    width: 0;
+    height: 0.125rem;
+    background-color: var(--color-secondary);
+    transition: var(--transition-normal);
+}
 
-        .section:hover .section-title::after {
-            width: 100%;
-        }
+.section:hover .section-title::after {
+    width: 100%;
+}
 
-        /* Skills with interactive hover */
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-sm);
-        }
+/* =============== Skills Section =============== */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
 
-        .skill-item {
-            background: var(--color-background);
-            padding: var(--space-xs) var(--space-sm);
-            border-radius: var(--radius-sm);
-            font-size: var(--text-sm);
-            transition: var(--transition-fast);
-            border: 0.125rem solid transparent;
-        }
+/* =============== Timeline =============== */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
 
-        .skill-item:hover {
-            border-color: var(--color-secondary);
-            transform: translateY(-0.125rem);
-            color: var(--color-secondary);
-        }
+.timeline-item {
+    display: flex;
+    gap: var(--space-lg);
+    padding-bottom: var(--space-md);
+    position: relative;
+}
 
-        /* Professional timeline */
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-lg);
-        }
+.timeline-date {
+    flex: 0 0 8.75rem;
+    color: var(--color-secondary);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    position: relative;
+}
 
-        .timeline-item {
-            display: flex;
-            gap: var(--space-lg);
-            padding-bottom: var(--space-md);
-            position: relative;
-            transition: var(--transition-normal);
-        }
+.timeline-date::after {
+    content: '';
+    position: absolute;
+    top: 0.5rem;
+    right: -1.5rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--color-secondary);
+    transition: var(--transition-normal);
+}
 
-        .timeline-date {
-            flex: 0 0 8.75rem;
-            color: var(--color-secondary);
-            font-weight: 600;
-            font-size: var(--text-sm);
-            position: relative;
-        }
+.timeline-content {
+    flex: 1;
+    position: relative;
+    padding-left: var(--space-lg);
+    border-left: 0.125rem solid var(--color-border);
+}
 
-        .timeline-date::after {
-            content: '';
-            position: absolute;
-            top: 0.5rem;
-            right: -1.5rem;
-            width: 0.5rem;
-            height: 0.5rem;
-            border-radius: 50%;
-            background-color: var(--color-secondary);
-            transition: var(--transition-normal);
-        }
+.timeline-content h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--space-xs);
+    font-size: var(--text-lg);
+}
 
-        .timeline-item:hover .timeline-date::after {
-            transform: scale(1.5);
-            background-color: var(--color-accent);
-        }
+.timeline-content p {
+    color: var(--color-text-light);
+    font-size: var(--text-sm);
+}
 
-        .timeline-content {
-            flex: 1;
-            position: relative;
-            padding-left: var(--space-lg);
-            border-left: 0.125rem solid var(--color-border);
-        }
+/* =============== Grid Layout =============== */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+}
 
-        .timeline-content h3 {
-            color: var(--color-primary);
-            margin-bottom: var(--space-xs);
-            font-size: var(--text-lg);
-        }
+.grid>* {
+    flex: 1 1 21.875rem;
+}
 
-        .timeline-content p {
-            color: var(--color-text-light);
-            font-size: var(--text-sm);
-        }
+.custom-list {
+    padding-left: 1.5rem;
+}
 
-        /* Grid layout */
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-md);
-        }
+/* =============== Responsive Design =============== */
+@media (max-width: 48rem) {
+    :root {
+        --header-height: auto;
+        --image-size: 8rem;
+    }
 
-        .grid>* {
-            flex: 1 1 21.875rem;
-        }
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--space-lg);
+    }
 
-        /* Professional summary */
-        .summary {
-            line-height: 1.8;
-            color: var(--color-text-light);
-            font-size: var(--text-base);
-        }
+    .contact-info {
+        justify-content: center;
+    }
 
-        /* Responsive adjustments */
-        @media (max-width: 48rem) {
-            :root {
-                --header-height: auto;
-                --image-size: 8rem;
-            }
+    .timeline-item {
+        flex-direction: column;
+        gap: var(--space-xs);
+    }
 
-            .header {
-                flex-direction: column;
-                text-align: center;
-                padding: var(--space-lg);
-            }
+    .timeline-date {
+        flex: 0;
+    }
 
-            .contact-info {
-                justify-content: center;
-            }
+    .timeline-content {
+        padding-left: var(--space-md);
+    }
+}
 
-            .timeline-item {
-                flex-direction: column;
-                gap: var(--space-xs);
-            }
-
-            .timeline-date {
-                flex: 0;
-            }
-
-            .timeline-content {
-                padding-left: var(--space-md);
-            }
-        }
     </style>
 </head>
 
@@ -334,6 +298,8 @@
                 <div class="contact-info">
                     <span class="contact-item">📱 084 406 0847</span>
                     <span class="contact-item">📧 tessa.engelbrecht@gmail.com</span>
+                    <span class="contact-item">🌍 English, Afrikaans</span>
+                    <span class="contact-item">🎂 15 April 2003</span>
                 </div>
             </div>
         </header>
@@ -342,15 +308,25 @@
             <h2 class="section-title">Professional Summary</h2>
             <div class="summary-grid">
                 <div class="summary-content">
-                    <p class="summary-text">Accomplished Computer Science graduate with a track record of academic
-                        excellence,
-                        now pursuing Honours in Computer Science. Demonstrated expertise in software development,
-                        analytical
-                        thinking, and project management through consistent academic achievements and practical
-                        experience.</p>
+                    <p class="summary-text">
+                        I'm Tessa Engelbrecht, a Computer Science Honours student with a love for
+                        problem-solving,
+                        leadership, and bringing ideas to life.
+                        I thrive in dynamic environments, whether it's building innovative software solutions or leading
+                        projects to success.
+                        I've honed my skills in software engineering, mathematics, and artificial intelligence, and I
+                        love
+                        tackling challenges head-on.
+                        When I'm not coding or studying, you'll find me on the softball field or mentoring students in
+                        mathematics and IT.
+                        I'm passionate about learning, teamwork, and leaving things better than I found them. Let's
+                        connect and
+                        make great things happen!
+                    </p>
                 </div>
             </div>
         </section>
+
 
 
         <div class="grid">
@@ -375,13 +351,66 @@
                     <span class="skill-item">Flutter</span>
                     <span class="skill-item">React</span>
                     <span class="skill-item">SQL/PostgreSQL</span>
+                    <span class="skill-item">MongoDb</span>
                     <span class="skill-item">JavaScript/TypeScript</span>
                     <span class="skill-item">HTML/CSS</span>
+                    <span class="skill-item">Supabase/Firebase</span>
+                    <span class="skill-item">Vercel/Netlify</span>
+                    <span class="skill-item">Gemini as LLM</span>
+                    <span class="skill-item">Dart Testing</span>
                 </div>
             </section>
         </div>
 
+
+
+
+
         <section class="section">
+            <h2 class="section-title">Education and Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 - Present</div>
+                    <div class="timeline-content">
+                        <h3>BScHons Computer Science</h3>
+                        <p><i>University of Pretoria</i></p>
+                        <ul class="achievement-list">
+                            <li>Specializing in Advanced Software Engineering and Artificial Intelligence</li>
+                            <li>Research focus Educational Software and Software Engineering</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2022 - 2024</div>
+                    <div class="timeline-content">
+                        <h3>BSc Computer Science</h3>
+                        <p><i>University of Pretoria</i></p>
+                        <ul>
+                            <li>Electives: Artificial Intelligence, Advanced Statistics, Database Systems, Mathematics,
+                                Human-Computer Interaction.</li>
+                            <li>Distinctions in 19 subjects.</li>
+                            <li>Project Manager for final-year software development projects.</li>
+                            <li>Weighted average of 75%</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2021</div>
+                    <div class="timeline-content">
+                        <h3>Grade 12 National Senior Certificate</h3>
+                        <p><i>High School Centurion</i></p>
+                        <ul>
+                            <li>8 distinctions </li>
+                            <li>Participated in IT Olympics (2019-2021).</li>
+                            <li>Top achiever in Accounting, IT, English, and Physical Sciences.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- <section class="section">
             <h2 class="section-title">Education and Experience</h2>
             <div class="timeline">
                 <div class="timeline-item">
@@ -449,6 +478,36 @@
                     </div>
                 </div>
             </div>
+        </section> -->
+        <section class="section">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2022 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Mathematics, IT, Physics, and Languages Tutor</h3>
+                        <p><i>Freelance</i></p>
+                        <ul>
+                            <li>Provided personalized tutoring to high school and university students.</li>
+                            <li>Helped students achieve significant improvement in grades through tailored lesson plans.
+                            </li>
+                            <li>Specialized in building student confidence in STEM subjects and language skills.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2022 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Vacation Software Engineer</h3>
+                        <p><i>BBD</i></p>
+                        <ul>
+                            <li>Developed practical software solutions as part of an agile team.</li>
+                            <li>Gained hands-on experience in software development lifecycle and teamwork.</li>
+                            <li>Contributed to debugging and refining application features.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
 
 
@@ -479,6 +538,26 @@
                 </div>
             </div>
         </section>
+        <div class="grid">
+            <section class="section">
+                <h2 class="section-title">Leadership</h2>
+                <ul class="custom-list">
+                    <li>Head Girl – Primary and High School</li>
+                    <li>Vice-President, School Governing Body (2020-2021)</li>
+                    <li>Member of the Representative Council of Learners (RCL)</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Cultural Participation</h2>
+                <ul class="custom-list">
+                    <li>Editor and Journalist for School Newspaper (2019-2021)</li>
+                    <li>Revue and Orators (English & Afrikaans)</li>
+                    <li>Participated in school theatre productions</li>
+                    <li>Group and individual participation in English and Afrikaans oratory competitions</li>
+                </ul>
+            </section>
+        </div>
     </div>
 </body>
 
